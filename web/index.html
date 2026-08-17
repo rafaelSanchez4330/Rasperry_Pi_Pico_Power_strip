@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Power Strip</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1 id="project-name">Smart Power Strip</h1>
+        <div class="status">
+            <span id="status-dot" class="dot offline"></span>
+            <span id="status-text">Conectando…</span>
+            <span id="device-ip" class="ip"></span>
+        </div>
+    </header>
+
+    <main>
+        <section id="outlets" class="outlets" aria-live="polite"></section>
+
+        <div class="global-controls">
+            <button id="all-on" class="btn btn-on">Encender todo</button>
+            <button id="all-off" class="btn btn-off">Apagar todo</button>
+        </div>
+
+        <p id="error" class="error" hidden></p>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

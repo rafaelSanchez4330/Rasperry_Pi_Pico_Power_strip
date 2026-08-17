@@ -1,0 +1,147 @@
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --card-hover: #263449;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --on: #22c55e;
+    --off: #64748b;
+    --danger: #ef4444;
+    --accent: #38bdf8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.topbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--card);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.online { background: var(--on); box-shadow: 0 0 8px var(--on); }
+.dot.offline { background: var(--off); }
+
+.ip {
+    font-family: ui-monospace, monospace;
+    color: var(--accent);
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.outlets {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.outlet {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    transition: background 0.2s ease;
+}
+
+.outlet:hover { background: var(--card-hover); }
+
+.outlet__name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.outlet__state {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--muted);
+}
+
+.outlet__state .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--off);
+}
+
+.outlet.is-on .outlet__state .indicator {
+    background: var(--on);
+    box-shadow: 0 0 10px var(--on);
+}
+
+.outlet.is-on .outlet__state .label { color: var(--on); }
+
+.btn {
+    border: none;
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    transition: opacity 0.15s ease, transform 0.05s ease;
+}
+
+.btn:active { transform: scale(0.98); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-on { background: var(--on); }
+.btn-off { background: var(--off); }
+
+.global-controls {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.75rem;
+}
+
+.global-controls .btn { width: auto; flex: 1; }
+
+.error {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--danger);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}

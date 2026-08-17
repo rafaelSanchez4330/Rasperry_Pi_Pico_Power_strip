@@ -1,0 +1,17 @@
+# Credenciales locales: NUNCA subir al repositorio.
+secrets.py
+firmware/secrets.py
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Sistema operativo / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
